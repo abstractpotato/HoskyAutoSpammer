@@ -28,7 +28,7 @@ for i in range(10):
     time.sleep(1)
 
 for x in sentances:
-    pyautogui.write(x, interval=random.random() / 2)
+    pyautogui.write(x, 0.05)
     pyautogui.press("enter")
     delay = random.random() + random.randint(2, 6)
     time.sleep(delay)
