@@ -7,8 +7,8 @@ prompt_count = int(input("how many prompts? "))
 prompts = []
 for i in range(prompt_count):
     prompt = input(f"what nonsense to generate? {i + 1}: ")
-    prompts.append(f"Write a random fact about {prompt}. Must be made up. Make it 10 sentances of 5 - 10 word.")
-    
+    prompts.append(f"Write random facts about {prompt}. Can be made up. 5 facts each a sinle sentances of 5 - 10 words each. Do not write lists.")
+
 count = int(input("count: "))
 sentances = []
 
@@ -19,15 +19,16 @@ for i in range(count):
     for x in result.split("\n"):
         sentances.append(x)
         print(x)
-        
-input("ready? [press enter]")
+
+input(f"{len(sentances)} are ready. [press enter to autospam]")
+random.shuffle(sentances)
 print("sleeping... 10s")
 for i in range(10):
     print(i + 1)
     time.sleep(1)
-    
+
 for x in sentances:
-    pyautogui.write(x, interval=0.01)
+    pyautogui.write(x, interval=random.random())
     pyautogui.press("enter")
     delay = random.random() + random.randint(2, 6)
     time.sleep(delay)
