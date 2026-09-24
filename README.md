@@ -14,7 +14,7 @@ potato recipes
 ```
 
 ```
-anti potato propaganda
+anti carrot propaganda
 ```
 
 ```
