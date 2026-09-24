@@ -7,7 +7,7 @@ prompt_count = int(input("how many prompts? "))
 prompts = []
 for i in range(prompt_count):
     prompt = input(f"what nonsense to generate? {i + 1}: ")
-    prompts.append(f"Write a random fact about {prompt}. Must be made up. Make it a single 3 - 5 word sentance.")
+    prompts.append(f"Write a random fact about {prompt}. Must be made up. Make it 10 sentances of 5 - 10 word.")
     
 count = int(input("count: "))
 sentances = []
@@ -16,8 +16,9 @@ for i in range(count):
     print(f"- generating: {i+1}/{count}")
     request = random.choice(prompts)
     result = str(model.respond(request))
-    print(result)
-    sentances.append(result)
+    for x in result.split("\n"):
+        sentances.append(x)
+        print(x)
         
 input("ready? [press enter]")
 print("sleeping... 10s")
