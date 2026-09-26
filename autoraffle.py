@@ -1,4 +1,4 @@
-import pyautogui, time
+import pyautogui, time, random
 
 print("starting raffle in 5s")
 time.sleep(5)
